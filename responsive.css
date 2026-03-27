@@ -265,6 +265,7 @@
 }
 
 /* ================== MOBILE (500px) ================== */
+/* ================== MOBILE (500px) ================== */
 @media (max-width: 500px) {
 
     .navbar {
@@ -335,24 +336,43 @@
         padding-left: 0;
         font-size: 20px;
         text-align: center;
+        margin-bottom: 10px;
+    }
+
+    /* horizontal slider */
+    .category .box,
+    .arrivals .box {
+        width: 100%;
+        padding: 15px 0 10px;
+        margin: 0;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        gap: 16px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+    }
+
+    /* scrollbar hide */
+    .category .box::-webkit-scrollbar,
+    .arrivals .box::-webkit-scrollbar {
+        display: none;
     }
 
     .category .box,
     .arrivals .box {
-        width: 100%;
-        padding: 15px 0;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 18px;
+        scrollbar-width: none;
     }
 
     .category .box1,
     .arrivals .boxarrive {
-        width: 100%;
-        max-width: 320px;
-        min-width: unset;
+        flex: 0 0 78%;
+        max-width: 78%;
+        min-width: 78%;
+        scroll-snap-align: start;
     }
 
     .browse {
@@ -363,7 +383,10 @@
 
     .box2,
     .box3 {
-        width: 100%;
+        width: 80%;
+        height: 70%;
+        margin: auto;
+        overflow: hidden;
     }
 
     .box2 {
