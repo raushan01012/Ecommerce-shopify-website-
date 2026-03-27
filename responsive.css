@@ -94,6 +94,10 @@
 
 /* ================== MOBILE / TABLET (768px) ================== */
 @media (max-width: 768px) {
+    #style{
+        display: none;
+
+    }
 
     .navbar {
         width: 100%;
