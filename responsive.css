@@ -23,14 +23,22 @@
         font-size: 24px;
     }
 
-    .box {
-        flex-wrap: wrap;
+    .category,
+    .arrivals {
+        padding: 40px 20px;
+    }
+
+    .category .box,
+    .arrivals .box {
+        padding: 30px 0;
         gap: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .box1,
     .boxarrive {
-        width: 45%;
+        width: calc(50% - 15px);
     }
 
     .browse {
@@ -50,36 +58,82 @@
     .end {
         flex-direction: column;
         height: auto;
-        padding: 40px 20px;
+        padding: 40px 20px 0;
         gap: 20px;
+        align-items: center;
     }
 
     .end img {
-        width: 250px;
-        height: 250px;
+        width: 360px;
+        height: 400px;
+        object-fit: contain;
+        object-position: center bottom;
+        display: block;
     }
 
     #womenbag {
-        width: 300px;
-        height: auto;
+        width: 360px;
+        height: 560px;
+        object-fit: contain;
+        object-position: center bottom;
+        display: block;
+        margin-bottom: 0;
+    }
+
+    .last {
+        line-height: normal;
+        gap: 12px;
+    }
+
+    .last h2 {
+        font-size: 34px;
+        line-height: 1.2;
     }
 }
 
 
-/* ================== MOBILE (768px) ================== */
+/* ================== MOBILE / TABLET (768px) ================== */
 @media (max-width: 768px) {
 
     .navbar {
+        width: 100%;
         padding: 0 15px;
+        position: relative;
+    }
+
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .navbar .middle {
-        display: none; /* menu hide */
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: #f5f5f5;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 18px;
+        padding: 20px 0;
+        display: none;
+        z-index: 99;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .navbar .middle.active {
+        display: flex;
     }
 
     .hero {
         flex-direction: column;
         justify-content: center;
+        align-items: center;
+        height: auto;
+        padding: 40px 20px;
     }
 
     .hero img {
@@ -88,37 +142,75 @@
     }
 
     .bg-text {
-        font-size: 70px;
+        font-size: 15vw;
         letter-spacing: 5px;
         top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
     }
 
     #style {
         font-size: 18px;
         top: 45%;
-        left: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        padding: 0;
     }
 
     #shop-now {
         top: 55%;
-        left: 5%;
+        left: 50%;
+        transform: translateX(-50%);
         padding: 10px 18px;
+    }
+
+    .category,
+    .arrivals {
+        padding: 30px 20px;
     }
 
     .category h1,
     .arrival-title {
-        padding-left: 20px;
+        padding-left: 0;
         font-size: 22px;
+        text-align: center;
     }
 
-    .box {
+    .category .box,
+    .arrivals .box {
+        width: 100%;
+        padding: 20px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin: 0 auto;
+    }
+
+    .category .box1,
+    .arrivals .boxarrive {
+        flex: 1 1 280px;
+        max-width: calc(50% - 10px);
+        min-width: 260px;
+    }
+
+    .browse {
+        width: 100%;
         flex-direction: column;
-        align-items: center;
+        height: auto;
     }
 
-    .box1,
-    .boxarrive {
-        width: 90%;
+    .box2,
+    .box3 {
+        width: 100%;
+    }
+
+    .box2 {
+        padding: 30px 20px;
     }
 
     .box2 h1 {
@@ -129,13 +221,24 @@
         font-size: 14px;
     }
 
-    .browse {
-        flex-direction: column;
-    }
-
     .box3 img {
         object-position: center;
         transform: scale(1);
+    }
+
+    .end {
+        flex-direction: column;
+        height: auto;
+        padding: 40px 20px 0;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .last {
+        width: 100%;
+        text-align: center;
+        line-height: normal;
+        gap: 12px;
     }
 
     .last h2 {
@@ -144,46 +247,193 @@
     }
 
     .end img {
-        width: 200px;
-        height: 200px;
+        width: 280px;
+        height: 320px;
+        object-fit: contain;
+        object-position: center bottom;
+        display: block;
     }
 
     #womenbag {
-        width: 220px;
+        width: 280px;
+        height: 380px;
+        object-fit: contain;
+        object-position: center bottom;
+        display: block;
+        margin-bottom: 0;
     }
 }
 
+/* ================== MOBILE (500px) ================== */
+@media (max-width: 500px) {
 
-/* ================== SMALL MOBILE (480px) ================== */
-@media (max-width: 480px) {
+    .navbar {
+        width: 100%;
+        padding: 0 12px;
+    }
+
+    .navbar .logo h1 {
+        font-size: 14px;
+    }
+
+    .search {
+        gap: 14px;
+    }
+
+    .hero {
+        height: auto;
+        padding: 30px 15px 40px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero img {
+        width: 95%;
+        height: auto;
+        margin: 0 auto;
+        display: block;
+    }
 
     .bg-text {
-        font-size: 50px;
+        font-size: 48px;
+        letter-spacing: 2px;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
     }
 
     #style {
         font-size: 14px;
+        top: 38%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        padding: 0;
     }
 
     #shop-now {
+        top: 48%;
+        left: 50%;
+        transform: translateX(-50%);
         padding: 8px 14px;
         font-size: 12px;
     }
 
-    .box1,
-    .boxarrive {
+    .category,
+    .arrivals {
         width: 100%;
+        padding: 30px 15px;
+    }
+
+    .category h1,
+    .arrival-title {
+        padding-left: 0;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .category .box,
+    .arrivals .box {
+        width: 100%;
+        padding: 15px 0;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .category .box1,
+    .arrivals .boxarrive {
+        width: 100%;
+        max-width: 320px;
+        min-width: unset;
+    }
+
+    .browse {
+        width: calc(100% - 30px);
+        margin: 0 auto;
+        flex-direction: column;
+    }
+
+    .box2,
+    .box3 {
+        width: 100%;
+    }
+
+    .box2 {
+        padding: 30px 15px;
     }
 
     .box2 h1 {
         font-size: 22px;
+        line-height: 1.2;
+        text-align: center;
+    }
+
+    .box2 h2 {
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .box3 img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .end {
+        width: 100%;
+        padding: 20px 15px 0;
+        gap: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .end img {
+        width: 100%;
+        max-width: 240px;
+        height: 250px;
+        object-fit: contain;
+        object-position: center bottom;
+        display: block;
+    }
+
+    #womenbag {
+        width: 100%;
+        max-width: 250px;
+        height: 300px;
+        object-fit: contain;
+        object-position: center bottom;
+        display: block;
+        margin-bottom: 0;
+    }
+
+    .last {
+        width: 100%;
+        text-align: center;
+        line-height: normal;
+        gap: 10px;
+    }
+
+    .last h1 {
+        font-size: 12px;
     }
 
     .last h2 {
         font-size: 22px;
+        line-height: 1.3;
     }
 
-    .end {
-        padding: 20px;
+    #check {
+        padding: 10px 18px;
+        font-size: 13px;
     }
 }
